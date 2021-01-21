@@ -4,6 +4,7 @@ on join:
 	if {annoucement::%player%} is not set:
 		set {ogloszenie::%player%} to 1
 command /annoucement [<text>]:
+	permission: admin.annoucement
 	trigger:
 		if {annoucement::%player%} is 1:
 			broadcast "<text>"
