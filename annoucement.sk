@@ -1,0 +1,12 @@
+on first join:
+	set {ogloszenie::%player%} to 1
+on join:
+	if {ogloszenie::%player%} is not set:
+		set {ogloszenie::%player%} to 1
+command /ogloszenie [<text>]:
+	trigger:
+			if {ogloszenie::%player%} is 1:
+				broadcast "<text>"
+				set {ogloszenie::%player%} to 0
+				wait 60 minutes
+				set {ogloszenie::%player%} to 1
